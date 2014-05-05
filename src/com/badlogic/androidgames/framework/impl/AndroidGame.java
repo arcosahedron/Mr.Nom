@@ -42,6 +42,7 @@ public class AndroidGame extends Activity implements Game {
 		int frameBufferHeight = isLandscape ? 1080: 1920; //frameBufferWidth = 320 IF landscape is True, else 480
 		Bitmap frameBuffer = Bitmap.createBitmap(frameBufferWidth, frameBufferHeight, Config.RGB_565); //RGB_565 won't waste memory and it will draw faster
 		
+		//This will scale graphics to accomadte the proper resolution
 		float scaleX = (float) frameBufferWidth / getWindowManager().getDefaultDisplay().getWidth();
 		float scaleY = (float) frameBufferHeight / getWindowManager().getDefaultDisplay().getHeight();
 		

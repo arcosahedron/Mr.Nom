@@ -30,8 +30,8 @@ public class Assets {
 }
 /*
  *We have a static member for ever image and sound we load from the assets
- *To call these asset can either - game.getGraphics().drawPixmap(Assets.background, 0, 0)
- *or - Assets.clock.play(1)
+ *To call these asset can either - game.getGraphics().drawPixmap(Assets.background, 0, 0) for images
+ *or - Assets.clock.play(1) for sounds
  *We must make sure that we don't overwrite them
  * */
  
