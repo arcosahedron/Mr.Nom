@@ -90,7 +90,7 @@ public class AndroidGraphics implements Graphics {
 	
 	public void drawLine(int x, int y, int x2, int y2, int color){
 		paint.setColor(color);
-		canvas.drawPoint(x, y, paint);
+		canvas.drawLine(x, y, x2, y2, paint);
 	}
 	
 	public void drawRect(int x, int y, int width, int height, int color){

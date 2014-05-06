@@ -43,7 +43,7 @@ public class Snake {
 	
 	//At eat, a new part will be added in the position of the current end part
 	public void eat(){
-		SnakePart end = parts.get(parts.size()-1);//Exclude head
+		SnakePart end = parts.get(parts.size()-1);//Get last part of snake
 		parts.add(new SnakePart(end.x, end.y));
 	}
 	
@@ -73,7 +73,8 @@ public class Snake {
 			head.x = 0;
 		if(head.y < 0)
 			head.y = 12;
-		if(head.y > 12);
+		if(head.y > 12)
+			head.y = 0;
 	}
 	
 	//This will determine whether or not the head part and tail part are in the same coordinate.
