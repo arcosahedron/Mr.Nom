@@ -14,6 +14,7 @@ public class AndroidInput implements Input {
 	TouchHandler touchHandler;
 	
 	//Constructor
+	@SuppressWarnings("deprecation")
 	public AndroidInput (Context context , View view, float scaleX, float scaleY){
 		accelHandler = new AccelerometerHandler(context);
 		keyHandler = new KeyboardHandler(view);

@@ -41,6 +41,7 @@ public class MultiTouchHandler implements TouchHandler {
 	public boolean onTouch(View v, MotionEvent event){
 		synchronized(this){}
 		int action = event.getAction() & MotionEvent.ACTION_MASK;
+		@SuppressWarnings("deprecation")
 		int pointerIndex = (event.getAction() & MotionEvent.ACTION_POINTER_ID_MASK) >> MotionEvent.ACTION_POINTER_ID_SHIFT;
 		int pointerCount = event.getPointerCount();
 		TouchEvent touchEvent;

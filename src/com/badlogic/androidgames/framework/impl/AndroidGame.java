@@ -18,7 +18,7 @@ import android.os.PowerManager.WakeLock;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class AndroidGame extends Activity implements Game {
+public abstract class AndroidGame extends Activity implements Game {
 	AndroidFastRenderView renderView; //We draw to this. It will also manage our main loop thread for us
 	Graphics graphics; //
 	Audio audio;
@@ -27,6 +27,7 @@ public class AndroidGame extends Activity implements Game {
 	Screen screen; //This will hold the currently active screen
 	WakeLock wakeLock; //This is for keeping the screen from dimming
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState); //Inheritance
@@ -38,8 +39,8 @@ public class AndroidGame extends Activity implements Game {
 		boolean isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE; //Will return either T or F
 		
 		//Set UP artificial frame buffer
-		int frameBufferWidth = isLandscape ? 1920 : 1080; //frameBufferWidth = 480 IF landscape is True, else 320
-		int frameBufferHeight = isLandscape ? 1080: 1920; //frameBufferWidth = 320 IF landscape is True, else 480
+		int frameBufferWidth = isLandscape ? 480 : 320; //frameBufferWidth = 480 IF landscape is True, else 320
+		int frameBufferHeight = isLandscape ? 320 : 480; //frameBufferWidth = 320 IF landscape is True, else 480
 		Bitmap frameBuffer = Bitmap.createBitmap(frameBufferWidth, frameBufferHeight, Config.RGB_565); //RGB_565 won't waste memory and it will draw faster
 		
 		//This will scale graphics to accomadte the proper resolution

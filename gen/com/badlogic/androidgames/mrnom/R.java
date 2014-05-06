@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.badlogic.androidgames.framework;
+package com.badlogic.androidgames.mrnom;
 
 public final class R {
     public static final class attr {
